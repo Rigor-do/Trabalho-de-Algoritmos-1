@@ -1,17 +1,3 @@
-% Trabalho 1 da matéria de Algoritmos Númericos para Engenharia. 
-% O trabalho é uma impletementação de diferentes métodos de resolução de EDO, entre eles Euler e Runge-Kutta.
-% Usando Symbolic v2.9.0 e SymPy v1.5.1. (testado com Symbolic v2.7.0 e SymPy v1.2 também)
-% Por Arthur Sorrentino, Higor Oliveira, Tulío Brunoro
-
-close all; % Fecha janelas de plot abertas
-clear all; % Limpeza do ambiente
-%close all hidden %
-
-addpath(['../' 'util'], ['../' 'edo']); % Inserção das funções auxiliares
-pkg load symbolic;	% Carregar bibliotéca simbólica
-available_graphics_toolkits(); % Adiciona um pacote de alteração do gráfico
-graphics_toolkit gnuplot;
-
 % Declaração das variáveis simbólicas
 syms y(x)
 
@@ -104,12 +90,12 @@ hold off;
 leg{end+1} = 'Dormand-Prince com passo adaptativo';
 legtab{end+1} = 'Ode45 Adap.';
 
-fprintf("Pausando por 0,5 seg para processar os graficos\n");
-pause(0.5);
 % fprintf("-------------%d--------------", 4);
 % ---------------------------------------------------------- 5 ----------------------------------------------------------
-
 legend(leg); % Add legenda
+
+fprintf("Pausando por 0,5 seg para processar os graficos\n");
+pause(0.5);
 %shg; % Plotnow
 % fprintf("-------------%d--------------", 5);
 % ---------------------------------------------------------- 6 ----------------------------------------------------------

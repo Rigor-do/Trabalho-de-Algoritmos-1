@@ -12,10 +12,18 @@ pkg load symbolic;	% Carregar bibliotéca simbólica
 available_graphics_toolkits(); % Adiciona um pacote de alteração do gráfico
 graphics_toolkit gnuplot;
 
-% Chamando resolução da letra A
+pause(0.1); % Espera pela inclusão da symbolic antes de dar o print da solução 1
 
+% Chamando resolução da letra A
+fprintf("------ Solucao 2.A ------\n");
+Solve2A
 
 % Chamando resolução da letra B
-
+fprintf("------ Solucao 2.B ------\n");
+Solve2B
 
 % Chamando resolução da letra C
+fprintf("------ Solucao 2.A ------\n");
+Solve2C
+
+fprintf("------ Programa finalizado ------\n");

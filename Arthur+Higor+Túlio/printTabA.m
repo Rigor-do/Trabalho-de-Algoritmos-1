@@ -8,8 +8,8 @@ function printTabA( A, leg, n, titulo)
 	fprintf('%s\n', titulo );
     
 	maxlen = 0;
-    for lege = leg
-        maxlen = max(maxlen, length(lege{:}));
+    for lege = leg % verifica o maior tamanho de legenda do vetor
+        maxlen = max(maxlen, length(lege{:})); 
     end
 
     maxlen++;

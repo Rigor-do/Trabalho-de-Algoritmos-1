@@ -1,26 +1,12 @@
-% Trabalho 1 da matéria de Algoritmos Númericos para Engenharia. 
-% O trabalho é uma impletementação de diferentes métodos de resolução de EDO, entre eles Euler e Runge-Kutta.
-% Usando Symbolic v2.9.0 e SymPy v1.5.1. (testado com Symbolic v2.7.0 e SymPy v1.2 também)
-% Por Arthur Sorrentino, Higor Oliveira, Tulío Brunoro
-
-close all; % Fecha janelas de plot abertas
-clear all; % Limpeza do ambiente
-%close all hidden %
-
-addpath(['../' 'util'], ['../' 'edo']); % Inserção das funções auxiliares
-pkg load symbolic;	% Carregar bibliotéca simbólica
-available_graphics_toolkits(); % Adiciona um pacote de alteração do gráfico
-graphics_toolkit gnuplot;
-
 % Declaração das variáveis simbólicas
 syms y(x)
 
 % ---------------------------------------------------------- 1 ----------------------------------------------------------
-ode = diff(y, x) == -y; % Definição da função
+ode = diff(y, x) == y*(x^2 - 1); % Definição da função
 x0 = 0; y0 = 1; % Definição do PVI
 cond = y(x0) == y0; % Definição do ponto para o symbolic
-func = @(x,y) -y; % Definição da função para o Octave
-leggraf = 'EDO: dy/dx = -y(x) - Valor inicial: y(0) = 1 -- Sol: y(x) = exp(-x)'; % String aleatoria do título do gráf.
+func = @(x,y) y*(x^2 - 1); % Definição da função para o Octave
+leggraf = 'EDO: dy/dx = y*(x^2 - 1) - Valor inicial: y(0) = 1 -- Sol: y(x) = 3*sqrt(x*2)/2 + x - 1'; % String aleatoria do título do gráf.
 
 fprintf('EDO para symbolic: '); ode % Printa a EDO para o symbolic
 fprintf('Condicao inicicial para symbolic: '); cond % Printa o PVI para o symbolic
@@ -104,12 +90,12 @@ hold off;
 leg{end+1} = 'Dormand-Prince com passo adaptativo';
 legtab{end+1} = 'Ode45 Adap.';
 
-fprintf("Pausando por 0,5 seg para processar os graficos\n");
-pause(0.5);
 % fprintf("-------------%d--------------", 4);
 % ---------------------------------------------------------- 5 ----------------------------------------------------------
-
 legend(leg); % Add legenda
+
+fprintf("Pausando por 0,5 seg para processar os graficos\n");
+pause(0.5);
 %shg; % Plotnow
 % fprintf("-------------%d--------------", 5);
 % ---------------------------------------------------------- 6 ----------------------------------------------------------
