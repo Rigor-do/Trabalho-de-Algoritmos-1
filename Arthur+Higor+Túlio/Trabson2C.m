@@ -20,7 +20,7 @@ ode = diff(y, x) == y*(x^2 - 1); % Definição da função
 x0 = 0; y0 = 1; % Definição do PVI
 cond = y(x0) == y0; % Definição do ponto para o symbolic
 func = @(x,y) y*(x^2 - 1); % Definição da função para o Octave
-leggraf = 'EDO: dy/dx = y*(x^2 - 1) - Valor inicial: y(0) = 1 -- Sol: y(x) = 3*sqrt(x*2)/2 + x - 1'; % String aleatoria do título do gráf.
+leggraf = 'EDO: dy/dx = y*(x^2 - 1) - Valor inicial: y(0) = 1 -- Sol: y(x) = e^{x*[x^(2)/3 - 1]}'; % String aleatoria do título do gráf.
 
 fprintf('EDO para symbolic: '); ode % Printa a EDO para o symbolic
 fprintf('Condicao inicicial para symbolic: '); cond % Printa o PVI para o symbolic
