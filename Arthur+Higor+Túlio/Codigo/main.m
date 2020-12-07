@@ -7,7 +7,7 @@ close all; % Fecha janelas de plot abertas
 clear all; % Limpeza do ambiente
 %close all hidden % Limpeza mais detalhada
 
-addpath(['../' 'util'], ['../' 'edo']); % Inserção das funções auxiliares
+addpath(['../' '../' 'util'], ['../' '../' 'edo']); % Inserção das funções auxiliares
 pkg load symbolic;	% Carregar bibliotéca simbólica
 available_graphics_toolkits(); % Adiciona um pacote de alteração do gráfico
 graphics_toolkit gnuplot;
